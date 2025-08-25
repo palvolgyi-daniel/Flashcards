@@ -1,0 +1,42 @@
+[
+    {
+        "definition": "One (1)",
+        "term": "Eins"
+    },
+    {
+        "definition": "Two (2)",
+        "term": "Zwei"
+    },
+    {
+        "definition": "Three (3)",
+        "term": "Drei"
+    },
+    {
+        "definition": "Four (4)",
+        "term": "Vier"
+    },
+    {
+        "definition": "Five (5)",
+        "term": "Fünf"
+    },
+    {
+        "definition": "A unique numerical identifier assigned to each device on a network, used to identify and communicate with other devices.",
+        "term": "IP Address"
+    },
+    {
+        "definition": "A networking device that connects multiple networks together and forwards data packets between them.",
+        "term": "Router"
+    },
+    {
+        "definition": "A networking device that connects devices on a network and forwards data packets between them.",
+        "term": "Switch"
+    },
+    {
+        "definition": "A security device or software that monitors and controls incoming and outgoing network traffic, based on a set of predefined security rules.",
+        "term": "Firewall"
+    },
+    {
+        "definition": "Dynamic Host Configuration Protocol, protocol that automatically assigns IP addresses and network configuration settings to devices on a network.",
+        "term": "DHCP"
+    }
+]

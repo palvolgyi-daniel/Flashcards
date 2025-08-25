@@ -1,0 +1,22 @@
+[
+    {
+        "name": "German numbers 1-5",
+        "terms": [
+            "Eins",
+            "Zwei",
+            "Drei",
+            "Vier",
+            "Fünf"
+        ]
+    },
+    {
+        "name": "Networking terms",
+        "terms": [
+            "IP Address",
+            "Router",
+            "Switch",
+            "Firewall",
+            "DHCP"
+        ]
+    }
+]

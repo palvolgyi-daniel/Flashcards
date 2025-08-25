@@ -39,3 +39,22 @@
 
 # debug information files
 *.dwo
+
+# ---
+
+# IDE/editor settings
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+*.code-workspace
+
+# Vendored dependencies (fetched by make deps)
+vendor/
+
+# ImGui .ini file
+imgui.ini
