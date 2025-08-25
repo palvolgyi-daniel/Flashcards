@@ -22,9 +22,7 @@ void UI::Render(std::vector<Flashcard> &flashcards, std::vector<Topic> &topics){
     RenderFlashcards(flashcards, topics);
 }
 
-//
 // ---------------- Normal Flashcards UI ----------------
-//
 void UI::RenderFlashcards(std::vector<Flashcard> &flashcards, std::vector<Topic> &topics){
     // validate indices every frame
     if(selectedIndex >= (int)flashcards.size()) selectedIndex = -1;
@@ -73,9 +71,8 @@ void UI::RenderFlashcards(std::vector<Flashcard> &flashcards, std::vector<Topic>
                 bool canStart = !topics[t].terms.empty();
                 if(ImGui::MenuItem("Start quiz...", nullptr, false, canStart)){
                     quizTopicIndex = t;
-                    quizNumQuestions = (int)topics[t].terms.size(); // default to all terms
+                    quizNumQuestions = (int)topics[t].terms.size(); // default to total number of terms
                     showQuizSetup = true;
-                    // we switch screens via Render() routing next frame
                 }
 
                 if(ImGui::MenuItem("Rename")){
@@ -112,7 +109,6 @@ void UI::RenderFlashcards(std::vector<Flashcard> &flashcards, std::vector<Topic>
         for(int idx : visibleIndices){
             if(ImGui::Selectable(flashcards[idx].term.c_str(), selectedIndex == idx)) selectedIndex = idx;
 
-            // Right-click menu
             if(ImGui::BeginPopupContextItem()){
 
                 if(ImGui::BeginMenu("Add to topic...")){
@@ -261,7 +257,7 @@ void UI::RenderFlashcards(std::vector<Flashcard> &flashcards, std::vector<Topic>
             }
         }
 
-        // --- Topic creation mode
+        // --- Topic creation mode ---
         else if(addMode == 1){
             ImGui::InputText("Topic Name", newTopicBuffer, IM_ARRAYSIZE(newTopicBuffer));
 
@@ -432,7 +428,6 @@ void UI::RenderQuiz(std::vector<Flashcard>& flashcards){
 
         ImGui::Separator();
         if(ImGui::Button("I got it right")){
-            // Mark correct by submitting the actual definition (string-compare in Quiz)
             quiz.SubmitAnswer(fc.definition);
             quiz.NextQuestion();
             quizShowDefinition = false;
@@ -444,7 +439,6 @@ void UI::RenderQuiz(std::vector<Flashcard>& flashcards){
         }
         ImGui::SameLine();
         if(ImGui::Button("I got it wrong")){
-            // Mark incorrect by submitting a non-matching string
             quiz.SubmitAnswer(std::string());
             quiz.NextQuestion();
             quizShowDefinition = false;
@@ -455,7 +449,6 @@ void UI::RenderQuiz(std::vector<Flashcard>& flashcards){
             }
         }
     } else{
-        // Safety: if already finished, go to results
         inQuiz = false;
         showQuizResults = true;
     }

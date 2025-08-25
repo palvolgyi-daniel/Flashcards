@@ -14,10 +14,6 @@ public:
 private:
     std::vector<Flashcard> flashcards;
     std::vector<Topic> topics;
-
-    int selectedIndex = -1; //flashcard index
-    std::string newTerm;
-    std::string newDefinition;
 };
 
 

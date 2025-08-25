@@ -10,11 +10,10 @@ class Quiz{
 public:
     Quiz();
 
-    // Start a new quiz from a topic
     void StartQuiz(const Topic& topic, const std::vector<Flashcard>& allFlashcards, int numQuestions = -1);
 
     // Retry options
-    void RetrySameTerms();  // reshuffle the same terms
+    void RetrySameTerms();
     void RetryNewTerms(const Topic& topic, const std::vector<Flashcard>& allFlashcards, int numQuestions = -1);
 
     // Quiz flow
@@ -26,14 +25,14 @@ public:
     // Results
     int GetScore() const;
     int GetTotalQuestions() const;
-    const std::vector<int>& GetMissedIndices() const; // indices into selectedIndices
+    const std::vector<int>& GetMissedIndices() const;
 
 private:
-    const std::vector<Flashcard>* flashcards; // reference (not owning)
-    std::vector<int> selectedIndices;         // indices into flashcards used in this quiz
+    const std::vector<Flashcard>* flashcards;
+    std::vector<int> selectedIndices;
     int currentIndex;
     int correctCount;
-    std::vector<int> missedIndices;           // stores indices from selectedIndices that were wrong
+    std::vector<int> missedIndices;
 
     void ShuffleIndices();
     void ResetProgress();
